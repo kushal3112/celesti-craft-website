@@ -1059,13 +1059,17 @@ section { padding: 96px 0; }
 }
 .contact-grid {
   display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 64px;
-  align-items: start;
+  grid-template-columns: 1.02fr 0.98fr;
+  gap: 56px;
+  align-items: stretch;
+}
+.contact-copy {
+  display: flex;
+  flex-direction: column;
 }
 .contact-info-items {
   display: flex; flex-direction: column; gap: 0;
-  margin-top: 40px;
+  margin-top: 28px;
 }
 .contact-item {
   display: flex; align-items: flex-start; gap: 16px;
@@ -1075,11 +1079,20 @@ section { padding: 96px 0; }
 .contact-item:last-child { border: none; }
 .c-icon {
   width: 44px; height: 44px;
-  background: var(--graphite);
+  background: linear-gradient(145deg, #25325f, #111a3f);
   border-radius: var(--radius);
+  border: 1px solid rgba(255,255,255,0.12);
   display: flex; align-items: center; justify-content: center;
-  font-size: 18px;
   flex-shrink: 0;
+}
+.c-icon svg {
+  width: 20px;
+  height: 20px;
+  stroke: rgba(255,255,255,0.95);
+  stroke-width: 2;
+  fill: none;
+  stroke-linecap: round;
+  stroke-linejoin: round;
 }
 .c-label {
   font-family: var(--font-mono);
@@ -1104,6 +1117,7 @@ section { padding: 96px 0; }
   border-radius: var(--radius);
   border: 1px solid var(--border);
   box-shadow: var(--shadow-sm);
+  height: 100%;
 }
 .contact-form h3 {
   font-size: 28px; font-weight: 800;
@@ -1997,46 +2011,46 @@ footer {
 <section id="contact">
   <div class="container">
     <div class="contact-grid">
-      <div>
+      <div class="contact-copy">
         <div class="section-label">
           <div class="section-label-line"></div>
           <span>Get In Touch</span>
         </div>
-        <h2 class="section-title">Request a<br>Quote</h2>
+        <h2 class="section-title">Request a Quote</h2>
         <p style="font-size:15px;color:var(--mid);margin-top:8px;max-width:420px;line-height:1.7;">
           Share your model, size and quantity. We'll respond within the same business day. Custom drawings welcome.
         </p>
         <div class="contact-info-items">
           <div class="contact-item">
-            <div class="c-icon">📞</div>
+            <div class="c-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2 4.1 2 2 0 0 1 4 2h3a2 2 0 0 1 2 1.7c.1.9.4 1.8.8 2.6a2 2 0 0 1-.4 2.1l-1.3 1.3a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.8.4 1.7.7 2.6.8A2 2 0 0 1 22 16.9z"/></svg></div>
             <div>
               <div class="c-label">Phone / WhatsApp</div>
               <div class="c-val"><a href="tel:+919810676819">+91 98106 76819</a></div>
             </div>
           </div>
           <div class="contact-item">
-            <div class="c-icon">✉️</div>
+            <div class="c-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M3 5h18v14H3z"/><path d="m3 7 9 6 9-6"/></svg></div>
             <div>
               <div class="c-label">Email</div>
               <div class="c-val"><a href="mailto:celesticraft2023@gmail.com">celesticraft2023@gmail.com</a></div>
             </div>
           </div>
           <div class="contact-item">
-            <div class="c-icon">🌐</div>
+            <div class="c-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M3 12h18"/><path d="M12 3a14 14 0 0 1 0 18"/><path d="M12 3a14 14 0 0 0 0 18"/></svg></div>
             <div>
               <div class="c-label">Website</div>
               <div class="c-val"><a href="https://www.forgedspeakerkit.in" target="_blank">www.forgedspeakerkit.in</a></div>
             </div>
           </div>
           <div class="contact-item">
-            <div class="c-icon">🕐</div>
+            <div class="c-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v6l4 2"/></svg></div>
             <div>
               <div class="c-label">Working Hours</div>
               <div class="c-val">Mon – Sat: 9:00 AM – 7:00 PM<br><span style="font-size:12px;color:var(--light-mid);">WhatsApp queries answered same day</span></div>
             </div>
           </div>
           <div class="contact-item">
-            <div class="c-icon">📍</div>
+            <div class="c-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 21s7-6.2 7-11a7 7 0 1 0-14 0c0 4.8 7 11 7 11z"/><circle cx="12" cy="10" r="2.5"/></svg></div>
             <div>
               <div class="c-label">Factory Address</div>
               <div class="c-val">Plot No. 3 &amp; 4, Kh. No. 54, Morta, Rasulpur<br>Ghaziabad, UP – 201003</div>
@@ -2046,21 +2060,22 @@ footer {
       </div>
       <div class="contact-form">
         <h3>Enquiry Form</h3>
-        <p>Fill in your details — we'll respond on WhatsApp.</p>
+        <p>Fill in your details — enquiry opens in WhatsApp and email for immediate follow-up.</p>
         <div class="form-row">
           <div class="form-group">
-            <label>Your Name *</label>
-            <input type="text" id="f-name" placeholder="Full name">
+            <label>Company Name *</label>
+            <input type="text" id="f-company" placeholder="Company name">
           </div>
           <div class="form-group">
-            <label>Phone / WhatsApp *</label>
+            <label>Phone / WhatsApp</label>
             <input type="tel" id="f-phone" placeholder="+91 XXXXX XXXXX">
           </div>
         </div>
         <div class="form-group">
-          <label>Email (optional)</label>
+          <label>Email</label>
           <input type="email" id="f-email" placeholder="you@company.com">
         </div>
+        <p style="font-size:12px;color:var(--light-mid);margin:-8px 0 16px;">At least one contact method is required: phone or email.</p>
         <div class="form-group">
           <label>Product / Model</label>
           <select id="f-product">
@@ -2189,17 +2204,30 @@ function filterProducts(cat, btn) {
 
 // Form submit
 function submitForm() {
-  const name = document.getElementById('f-name').value.trim();
+  const company = document.getElementById('f-company').value.trim();
   const phone = document.getElementById('f-phone').value.trim();
   const email = document.getElementById('f-email').value.trim();
   const product = document.getElementById('f-product').value;
   const msg = document.getElementById('f-msg').value.trim();
-  if (!name) { alert('Please enter your name.'); return; }
+  if (!company) { alert('Please enter company name.'); return; }
   if (!phone && !email) { alert('Please provide at least a phone number or email.'); return; }
+
+  // Replace the second number below with your actual secondary WhatsApp number.
+  const whatsappTargets = ['919810676819', '919810676819'];
+  const followupEmail = 'celesticraft2023@gmail.com';
+
   const text = encodeURIComponent(
-    `Hello Celesti Craft!\n\nName: ${name}\nPhone: ${phone || 'Not provided'}\nEmail: ${email || 'Not provided'}\nModel: ${product || 'General enquiry'}\n\nRequirements:\n${msg || 'Please share product details and pricing.'}`
+    `Hello Celesti Craft!\n\nCompany: ${company}\nPhone: ${phone || 'Not provided'}\nEmail: ${email || 'Not provided'}\nModel: ${product || 'General enquiry'}\n\nRequirements:\n${msg || 'Please share product details and pricing.'}`
   );
-  window.open(`https://wa.me/919810676819?text=${text}`, '_blank');
+  whatsappTargets.forEach((num, idx) => {
+    setTimeout(() => window.open(`https://wa.me/${num}?text=${text}`, '_blank'), idx * 180);
+  });
+
+  const mailSubject = encodeURIComponent(`New Quote Enquiry - ${company}`);
+  const mailBody = encodeURIComponent(
+    `Company: ${company}\nPhone: ${phone || 'Not provided'}\nEmail: ${email || 'Not provided'}\nModel: ${product || 'General enquiry'}\n\nRequirements:\n${msg || 'Please share product details and pricing.'}`
+  );
+  setTimeout(() => window.open(`mailto:${followupEmail}?subject=${mailSubject}&body=${mailBody}`, '_blank'), 360);
 }
 
 // Testimonials carousel (shows 3 cards on desktop)
