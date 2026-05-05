@@ -944,12 +944,62 @@ section { padding: 96px 0; }
   background: var(--white);
 }
 .testi-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 24px;
+  position: relative;
   margin-top: 56px;
 }
+.testi-viewport {
+  overflow: hidden;
+}
+.testi-track {
+  display: flex;
+  gap: 24px;
+  transition: transform 0.45s ease;
+  will-change: transform;
+}
+.testi-controls {
+  display: flex;
+  justify-content: flex-end;
+  gap: 8px;
+  margin-top: 16px;
+}
+.testi-btn {
+  width: 38px;
+  height: 38px;
+  border: 1px solid var(--border);
+  border-radius: 50%;
+  background: var(--white);
+  color: var(--graphite);
+  cursor: pointer;
+  font-size: 18px;
+  line-height: 1;
+  transition: all 0.2s ease;
+}
+.testi-btn:hover {
+  background: var(--graphite);
+  color: var(--white);
+  border-color: var(--graphite);
+}
+.testi-btn:disabled {
+  opacity: 0.45;
+  cursor: not-allowed;
+}
+.testi-dots {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  margin-right: auto;
+}
+.testi-dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: var(--border);
+}
+.testi-dot.active {
+  background: var(--copper);
+}
 .testi-card {
+  flex: 0 0 calc((100% - 48px) / 3);
   padding: 32px;
   background: var(--off-white);
   border-radius: var(--radius);
@@ -1264,7 +1314,7 @@ footer {
   display: none;
 }
   .products-grid { grid-template-columns: repeat(2, 1fr); }
-  .testi-grid { grid-template-columns: 1fr; }
+  .testi-card { flex-basis: calc((100% - 24px) / 2); }
   .finishes-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   .process-steps { grid-template-columns: 1fr; gap: 40px; }
   .process-steps::before { display: none; }
@@ -1279,6 +1329,7 @@ footer {
   .hero-stats { flex-direction: column; gap: 16px; }
   .hero-stat { border: none; margin: 0; padding: 0; }
   .form-row { grid-template-columns: 1fr; }
+  .testi-card { flex-basis: 100%; }
   .footer-grid { grid-template-columns: 1fr; gap: 32px; }
   .footer-bottom { flex-direction: column; gap: 12px; text-align: center; }
   section { padding: 64px 0; }
@@ -1899,50 +1950,40 @@ footer {
       <span>Client Reviews</span>
     </div>
     <h2 class="section-title">What Buyers Say</h2>
-    <div class="testi-grid">
-      <div class="testi-card">
-        <div class="stars">★★★★★</div>
-        <p class="testi-text">"Dimensions are spot on every batch. Voice coil gap is consistent and the CED finish quality is excellent. We've been sourcing exclusively from Celesti Craft for over a year."</p>
-        <div class="testi-author">
-          <div class="author-avatar">R</div>
-          <div>
-            <div class="author-name">Rajesh K.</div>
-            <div class="author-co">Speaker Manufacturer, Delhi</div>
+    <div class="testi-grid" id="testiCarousel">
+      <div class="testi-viewport">
+        <div class="testi-track" id="testiTrack">
+          <div class="testi-card">
+            <div class="stars">★★★★★</div>
+            <p class="testi-text">"Batch-to-batch dimensions are consistent. We checked bore and face tolerance on 500 pcs and rejection dropped noticeably compared to our previous vendor."</p>
+            <div class="testi-author"><div class="author-avatar">R</div><div><div class="author-name">Rakesh M.</div><div class="author-co">PA Speaker Assembler, Delhi</div></div></div>
+          </div>
+          <div class="testi-card">
+            <div class="stars">★★★★★</div>
+            <p class="testi-text">"CED finish quality is excellent and rust issues during storage are almost zero now. Dispatch timelines are clear and communication is quick on WhatsApp."</p>
+            <div class="testi-author"><div class="author-avatar">S</div><div><div class="author-name">Saurabh J.</div><div class="author-co">Audio Components Trader, Noida</div></div></div>
+          </div>
+          <div class="testi-card">
+            <div class="stars">★★★★★</div>
+            <p class="testi-text">"For custom size top plates, they understood our drawing quickly and gave a sample run in under two weeks. Fitment was accurate without rework."</p>
+            <div class="testi-author"><div class="author-avatar">P</div><div><div class="author-name">Pradeep S.</div><div class="author-co">Sound System OEM, Mumbai</div></div></div>
+          </div>
+          <div class="testi-card">
+            <div class="stars">★★★★★</div>
+            <p class="testi-text">"Pricing is fair for the quality level, and GST invoicing is always proper. Our team especially likes the Chrome finish consistency across recurring orders."</p>
+            <div class="testi-author"><div class="author-avatar">N</div><div><div class="author-name">Nitin A.</div><div class="author-co">Speaker Parts Distributor, Jaipur</div></div></div>
+          </div>
+          <div class="testi-card">
+            <div class="stars">★★★★★</div>
+            <p class="testi-text">"We shifted two key models to Celesti Craft last year. Delivery reliability improved and the overall assembly alignment has been much better."</p>
+            <div class="testi-author"><div class="author-avatar">M</div><div><div class="author-name">Manish G.</div><div class="author-co">PA Cabinet Builder, Ghaziabad</div></div></div>
           </div>
         </div>
       </div>
-      <div class="testi-card">
-        <div class="stars">★★★★★</div>
-        <p class="testi-text">"Tried 3 suppliers before these guys. Finally found one who can hold tight tolerances on the bore and deliver on time. Chrome finish is consistently bright and uniform."</p>
-        <div class="testi-author">
-          <div class="author-avatar">A</div>
-          <div>
-            <div class="author-name">Amit V.</div>
-            <div class="author-co">PA System OEM, Noida</div>
-          </div>
-        </div>
-      </div>
-      <div class="testi-card">
-        <div class="stars">★★★★★</div>
-        <p class="testi-text">"We sent a custom drawing for a non-standard size. They came back with a trial batch in 10 days and the parts fit perfectly. Competitive pricing and proper GST billing."</p>
-        <div class="testi-author">
-          <div class="author-avatar">P</div>
-          <div>
-            <div class="author-name">Pradeep S.</div>
-            <div class="author-co">Audio Equipment Exporter, Mumbai</div>
-          </div>
-        </div>
-      </div>
-      <div class="testi-card">
-        <div class="stars">★★★★★</div>
-        <p class="testi-text">"Pricing is very competitive and they give proper GST bills. Communication is fast over WhatsApp. We've been ordering regularly for over a year now."</p>
-        <div class="testi-author">
-          <div class="author-avatar">M</div>
-          <div>
-            <div class="author-name">Manish G.</div>
-            <div class="author-co">PA System Builder, Ghaziabad</div>
-          </div>
-        </div>
+      <div class="testi-controls">
+        <div class="testi-dots" id="testiDots"></div>
+        <button class="testi-btn" id="testiPrev" aria-label="Previous reviews">&#8592;</button>
+        <button class="testi-btn" id="testiNext" aria-label="Next reviews">&#8594;</button>
       </div>
     </div>
     <div style="text-align:center;margin-top:40px;">
@@ -2160,6 +2201,72 @@ function submitForm() {
   );
   window.open(`https://wa.me/919810676819?text=${text}`, '_blank');
 }
+
+// Testimonials carousel (shows 3 cards on desktop)
+function initTestimonialsCarousel() {
+  const track = document.getElementById('testiTrack');
+  const prevBtn = document.getElementById('testiPrev');
+  const nextBtn = document.getElementById('testiNext');
+  const dotsWrap = document.getElementById('testiDots');
+  if (!track || !prevBtn || !nextBtn || !dotsWrap) return;
+
+  const cards = Array.from(track.children);
+  let index = 0;
+  let timer = null;
+
+  const getVisibleCount = () => {
+    if (window.innerWidth <= 600) return 1;
+    if (window.innerWidth <= 980) return 2;
+    return 3;
+  };
+
+  const renderDots = (maxIndex) => {
+    dotsWrap.innerHTML = '';
+    for (let i = 0; i <= maxIndex; i++) {
+      const dot = document.createElement('span');
+      dot.className = `testi-dot${i === index ? ' active' : ''}`;
+      dotsWrap.appendChild(dot);
+    }
+  };
+
+  const update = () => {
+    const visible = getVisibleCount();
+    const maxIndex = Math.max(0, cards.length - visible);
+    index = Math.min(index, maxIndex);
+    const cardWidth = cards[0].offsetWidth;
+    const gap = 24;
+    track.style.transform = `translateX(-${index * (cardWidth + gap)}px)`;
+    renderDots(maxIndex);
+  };
+
+  const goNext = () => {
+    const visible = getVisibleCount();
+    const maxIndex = Math.max(0, cards.length - visible);
+    index = index >= maxIndex ? 0 : index + 1;
+    update();
+  };
+
+  prevBtn.addEventListener('click', () => {
+    const visible = getVisibleCount();
+    const maxIndex = Math.max(0, cards.length - visible);
+    index = index <= 0 ? maxIndex : index - 1;
+    update();
+  });
+  nextBtn.addEventListener('click', goNext);
+
+  const startAuto = () => {
+    clearInterval(timer);
+    timer = setInterval(goNext, 3500);
+  };
+  track.addEventListener('mouseenter', () => clearInterval(timer));
+  track.addEventListener('mouseleave', startAuto);
+  window.addEventListener('resize', update);
+
+  update();
+  startAuto();
+}
+
+initTestimonialsCarousel();
 
 // Scroll-triggered fade-in for sections
 const observer = new IntersectionObserver((entries) => {
