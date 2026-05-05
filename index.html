@@ -571,29 +571,6 @@ section { padding: 96px 0; }
   background: var(--off-white);
 }
 
-.products-filter {
-  display: flex; gap: 8px; flex-wrap: wrap;
-  margin-bottom: 48px;
-}
-.filter-btn {
-  padding: 8px 20px;
-  border-radius: var(--radius);
-  border: 1px solid var(--border);
-  background: var(--white);
-  font-family: var(--font-display);
-  font-size: 13px; font-weight: 600;
-  letter-spacing: 0.06em;
-  text-transform: uppercase;
-  color: var(--mid);
-  cursor: pointer;
-  transition: all 0.2s;
-}
-.filter-btn:hover, .filter-btn.active {
-  background: var(--graphite);
-  border-color: var(--graphite);
-  color: var(--white);
-}
-
 .products-grid {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
@@ -1598,13 +1575,6 @@ footer {
     <h2 class="section-title">Product Range</h2>
     <p class="section-sub">Select forged pole plate models — all available in Chrome, CED or Zinc finish. Custom sizes and finishes on request.</p>
 
-    <div class="products-filter" style="margin-top:32px;">
-      <button class="filter-btn active" onclick="filterProducts('all',this)">All Models</button>
-      <button class="filter-btn" onclick="filterProducts('standard',this)">Standard Range</button>
-      <button class="filter-btn" onclick="filterProducts('heavy',this)">Heavy Duty</button>
-      <button class="filter-btn" onclick="filterProducts('double',this)">Double Magnet</button>
-    </div>
-
     <div class="products-grid" id="productsGrid">
 
       <div class="product-card" data-cat="standard">
@@ -2233,19 +2203,6 @@ function toggleMenu() {
   const btn = document.getElementById('hamburger');
   const open = menu.classList.toggle('open');
   btn.classList.toggle('open', open);
-}
-
-// Product filter
-function filterProducts(cat, btn) {
-  document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
-  btn.classList.add('active');
-  document.querySelectorAll('.product-card').forEach(card => {
-    if (cat === 'all' || card.dataset.cat === cat) {
-      card.style.display = 'flex';
-    } else {
-      card.style.display = 'none';
-    }
-  });
 }
 
 // Form submit
