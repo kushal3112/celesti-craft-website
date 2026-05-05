@@ -2212,46 +2212,30 @@ async function submitForm() {
   if (!company) { alert('Please enter company name.'); return; }
   if (!phone && !email) { alert('Please provide at least a phone number or email.'); return; }
 
-  const whatsappTargets = ['919810676819', '918860410825'];
-  const formspreeEndpoint = 'https://formspree.io/f/your_form_id';
-  const followupEmail = 'celesticraft2023@gmail.com';
+  const formspreeEndpoint = 'https://formspree.io/f/xbdwopzy';
 
-  const plainText =
-    `Hello Celesti Craft!\n\nCompany: ${company}\nPhone: ${phone || 'Not provided'}\nEmail: ${email || 'Not provided'}\nModel: ${product || 'General enquiry'}\n\nRequirements:\n${msg || 'Please share product details and pricing.'}`;
-  const text = encodeURIComponent(plainText);
-
-  if (formspreeEndpoint.includes('your_form_id')) {
-    alert('Formspree endpoint pending: replace "your_form_id" in submitForm() to enable email delivery to celesticraft2023@gmail.com.');
-  } else {
-    try {
-      const resp = await fetch(formspreeEndpoint, {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-          'Accept': 'application/json'
-        },
-        body: JSON.stringify({
-          company,
-          phone: phone || 'Not provided',
-          email: email || 'Not provided',
-          model: product || 'General enquiry',
-          message: msg || 'Please share product details and pricing.',
-          _replyto: email || '',
-          _subject: `New Quote Enquiry - ${company}`,
-          destination_email: followupEmail
-        })
-      });
-      if (!resp.ok) {
-        throw new Error('Formspree request failed');
-      }
-    } catch (e) {
-      alert('Could not submit to email right now, but WhatsApp will still open. Please check Formspree endpoint/config.');
-    }
+  try {
+    const resp = await fetch(formspreeEndpoint, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+        'Accept': 'application/json'
+      },
+      body: JSON.stringify({
+        company,
+        phone: phone || 'Not provided',
+        email: email || 'Not provided',
+        model: product || 'General enquiry',
+        message: msg || 'Please share product details and pricing.',
+        _replyto: email || '',
+        _subject: `New Quote Enquiry - ${company}`
+      })
+    });
+    if (!resp.ok) throw new Error('Formspree request failed');
+    alert('Thanks! Your enquiry has been submitted successfully.');
+  } catch (e) {
+    alert('Could not submit your enquiry right now. Please try again in a moment.');
   }
-
-  whatsappTargets.forEach((num, idx) => {
-    setTimeout(() => window.open(`https://wa.me/${num}?text=${text}`, '_blank'), idx * 180);
-  });
 }
 
 // Testimonials carousel (shows 3 cards on desktop)
