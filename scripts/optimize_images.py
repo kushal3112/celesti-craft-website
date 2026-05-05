@@ -17,6 +17,18 @@ TARGETS = {
     "finish-ced": (ROOT / "assets" / "finishes" / "ced-coating.png", [420, 760]),
     "finish-zinc-yellow": (ROOT / "assets" / "finishes" / "zinc-yellow.png", [420, 760]),
     "finish-zinc-white": (ROOT / "assets" / "finishes" / "zinc-white.png", [420, 760]),
+    "product-bnc": (ROOT / "Website_Images" / "bnc model.png", [360, 700]),
+    "product-rcf": (ROOT / "Website_Images" / "RCF model.png", [360, 700]),
+    "product-pd": (ROOT / "Website_Images" / "PD Model.png", [360, 700]),
+    "product-plain": (ROOT / "Website_Images" / "Plain Model.png", [360, 700]),
+    "product-rcf-light": (ROOT / "Website_Images" / "RCF Light.png", [360, 700]),
+    "product-ss": (ROOT / "Website_Images" / "SS_model.png", [360, 700]),
+    "product-jumbo": (ROOT / "Website_Images" / "Jumbo Model.png", [360, 700]),
+    "product-2-side": (ROOT / "Website_Images" / "2 side pole.png", [360, 700]),
+    "product-radial-fin": (ROOT / "Website_Images" / "Radial Fin Model.png", [360, 700]),
+    "product-flower": (ROOT / "Website_Images" / "Flower Model.png", [360, 700]),
+    "product-double": (ROOT / "Website_Images" / "Double magnet.png", [360, 700]),
+    "product-u-yoke": (ROOT / "Website_Images" / "U Yoke.png", [360, 700]),
 }
 
 
