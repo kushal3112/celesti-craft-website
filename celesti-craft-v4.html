@@ -523,15 +523,11 @@ section { padding: 96px 0; }
   border-radius: var(--radius);
   box-shadow: var(--shadow-lg);
 }
+.about-img-block img + img {
+  display: none;
+}
 .about-img-float {
-  position: absolute;
-  bottom: -28px; right: -28px;
-  width: 48%;
-  aspect-ratio: 1;
-  object-fit: cover;
-  border-radius: var(--radius);
-  box-shadow: var(--shadow-lg);
-  border: 4px solid var(--white);
+  display: none;
 }
 .about-process-strip {
   position: absolute;
@@ -1227,7 +1223,9 @@ footer {
   .hero-left { padding: 64px 32px; }
   .hero-right { display: none; }
   .about-grid, .contact-grid { grid-template-columns: 1fr; gap: 40px; }
-  .about-img-float { display: none; }
+  .about-img-float {
+  display: none;
+}
   .products-grid { grid-template-columns: repeat(2, 1fr); }
   .testi-grid { grid-template-columns: 1fr; }
   .finishes-grid { grid-template-columns: 1fr; }
