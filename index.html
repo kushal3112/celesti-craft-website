@@ -864,12 +864,14 @@ section { padding: 96px 0; }
   background: var(--white);
   border: 1px solid var(--border);
   border-radius: var(--radius);
-  overflow: hidden;
+  overflow-x: auto;
+  overflow-y: hidden;
   box-shadow: var(--shadow-sm);
 }
 .models-table {
   width: 100%;
   border-collapse: collapse;
+  min-width: 760px;
 }
 .models-table thead tr {
   background: var(--graphite);
@@ -897,6 +899,7 @@ section { padding: 96px 0; }
   font-size: 14px;
   color: var(--ink);
   vertical-align: middle;
+  text-align: left;
 }
 .models-table td:first-child {
   padding-left: 28px;
@@ -910,6 +913,12 @@ section { padding: 96px 0; }
   font-family: var(--font-mono);
   font-size: 12px;
   color: var(--mid);
+}
+.models-table td:last-child {
+  min-width: 190px;
+}
+.models-table td:last-child .finish-tag {
+  margin-bottom: 6px;
 }
 .finish-tag {
   display: inline-block;
@@ -1806,51 +1815,63 @@ footer {
         <tbody>
           <tr>
             <td class="mono-cell">01</td><td>BNC Model</td>
-            <td class="mono-cell">190 – 280 mm</td><td class="mono-cell">3" – 5"</td>`r`n            <td><span class="finish-tag tag-chrome">Chrome</span><span class="finish-tag tag-ced">CED</span><span class="finish-tag tag-zinc">Zinc</span></td>
+            <td class="mono-cell">190 – 280 mm</td><td class="mono-cell">3" – 5"</td>
+            <td><span class="finish-tag tag-chrome">Chrome</span><span class="finish-tag tag-ced">CED</span><span class="finish-tag tag-zinc">Zinc</span></td>
           </tr>
           <tr>
             <td class="mono-cell">02</td><td>RCF Model</td>
-            <td class="mono-cell">190 – 280 mm</td><td class="mono-cell">3" – 5"</td>`r`n            <td><span class="finish-tag tag-chrome">Chrome</span><span class="finish-tag tag-ced">CED</span><span class="finish-tag tag-zinc">Zinc</span></td>
+            <td class="mono-cell">190 – 280 mm</td><td class="mono-cell">3" – 5"</td>
+            <td><span class="finish-tag tag-chrome">Chrome</span><span class="finish-tag tag-ced">CED</span><span class="finish-tag tag-zinc">Zinc</span></td>
           </tr>
           <tr>
             <td class="mono-cell">03</td><td>PD Model</td>
-            <td class="mono-cell">90 – 330 mm</td><td class="mono-cell">1.5" – 6"</td>`r`n            <td><span class="finish-tag tag-chrome">Chrome</span><span class="finish-tag tag-ced">CED</span><span class="finish-tag tag-zinc">Zinc</span></td>
+            <td class="mono-cell">90 – 330 mm</td><td class="mono-cell">1.5" – 6"</td>
+            <td><span class="finish-tag tag-chrome">Chrome</span><span class="finish-tag tag-ced">CED</span><span class="finish-tag tag-zinc">Zinc</span></td>
           </tr>
           <tr>
             <td class="mono-cell">04</td><td>Plain Model</td>
-            <td class="mono-cell">90 – 330 mm</td><td class="mono-cell">1.5" – 6"</td>`r`n            <td><span class="finish-tag tag-chrome">Chrome</span><span class="finish-tag tag-ced">CED</span><span class="finish-tag tag-zinc">Zinc</span></td>
+            <td class="mono-cell">90 – 330 mm</td><td class="mono-cell">1.5" – 6"</td>
+            <td><span class="finish-tag tag-chrome">Chrome</span><span class="finish-tag tag-ced">CED</span><span class="finish-tag tag-zinc">Zinc</span></td>
           </tr>
           <tr>
             <td class="mono-cell">05</td><td>RCF Light Model</td>
-            <td class="mono-cell">190 – 330 mm</td><td class="mono-cell">3" – 6"</td>`r`n            <td><span class="finish-tag tag-chrome">Chrome</span><span class="finish-tag tag-ced">CED</span><span class="finish-tag tag-zinc">Zinc</span></td>
+            <td class="mono-cell">190 – 330 mm</td><td class="mono-cell">3" – 6"</td>
+            <td><span class="finish-tag tag-chrome">Chrome</span><span class="finish-tag tag-ced">CED</span><span class="finish-tag tag-zinc">Zinc</span></td>
           </tr>
           <tr>
             <td class="mono-cell">06</td><td>SS Model</td>
-            <td class="mono-cell">90 – 330 mm</td><td class="mono-cell">1.5" – 6"</td>`r`n            <td><span class="finish-tag tag-chrome">Chrome</span><span class="finish-tag tag-ced">CED</span><span class="finish-tag tag-zinc">Zinc</span></td>
+            <td class="mono-cell">90 – 330 mm</td><td class="mono-cell">1.5" – 6"</td>
+            <td><span class="finish-tag tag-chrome">Chrome</span><span class="finish-tag tag-ced">CED</span><span class="finish-tag tag-zinc">Zinc</span></td>
           </tr>
           <tr>
             <td class="mono-cell">07</td><td>Jumbo Model</td>
-            <td class="mono-cell">190 – 280 mm</td><td class="mono-cell">3" – 5"</td>`r`n            <td><span class="finish-tag tag-chrome">Chrome</span><span class="finish-tag tag-ced">CED</span><span class="finish-tag tag-zinc">Zinc</span></td>
+            <td class="mono-cell">190 – 280 mm</td><td class="mono-cell">3" – 5"</td>
+            <td><span class="finish-tag tag-chrome">Chrome</span><span class="finish-tag tag-ced">CED</span><span class="finish-tag tag-zinc">Zinc</span></td>
           </tr>
           <tr>
             <td class="mono-cell">08</td><td>2 Side Pole Model</td>
-            <td class="mono-cell">90 – 330 mm</td><td class="mono-cell">1.5" – 6"</td>`r`n            <td><span class="finish-tag tag-chrome">Chrome</span><span class="finish-tag tag-ced">CED</span><span class="finish-tag tag-zinc">Zinc</span></td>
+            <td class="mono-cell">90 – 330 mm</td><td class="mono-cell">1.5" – 6"</td>
+            <td><span class="finish-tag tag-chrome">Chrome</span><span class="finish-tag tag-ced">CED</span><span class="finish-tag tag-zinc">Zinc</span></td>
           </tr>
           <tr>
             <td class="mono-cell">09</td><td>Radial Fin Model</td>
-            <td class="mono-cell">190 – 280 mm</td><td class="mono-cell">3" – 5"</td>`r`n            <td><span class="finish-tag tag-chrome">Chrome</span><span class="finish-tag tag-ced">CED</span><span class="finish-tag tag-zinc">Zinc</span></td>
+            <td class="mono-cell">190 – 280 mm</td><td class="mono-cell">3" – 5"</td>
+            <td><span class="finish-tag tag-chrome">Chrome</span><span class="finish-tag tag-ced">CED</span><span class="finish-tag tag-zinc">Zinc</span></td>
           </tr>
           <tr>
             <td class="mono-cell">10</td><td>Flower Model</td>
-            <td class="mono-cell">190 – 330 mm</td><td class="mono-cell">3" – 6"</td>`r`n            <td><span class="finish-tag tag-chrome">Chrome</span><span class="finish-tag tag-ced">CED</span><span class="finish-tag tag-zinc">Zinc</span></td>
+            <td class="mono-cell">190 – 330 mm</td><td class="mono-cell">3" – 6"</td>
+            <td><span class="finish-tag tag-chrome">Chrome</span><span class="finish-tag tag-ced">CED</span><span class="finish-tag tag-zinc">Zinc</span></td>
           </tr>
           <tr>
             <td class="mono-cell">11</td><td>Double Magnet</td>
-            <td class="mono-cell">90 – 330 mm</td><td class="mono-cell">1.5" – 6"</td>`r`n            <td><span class="finish-tag tag-chrome">Chrome</span><span class="finish-tag tag-ced">CED</span><span class="finish-tag tag-zinc">Zinc</span></td>
+            <td class="mono-cell">90 – 330 mm</td><td class="mono-cell">1.5" – 6"</td>
+            <td><span class="finish-tag tag-chrome">Chrome</span><span class="finish-tag tag-ced">CED</span><span class="finish-tag tag-zinc">Zinc</span></td>
           </tr>
           <tr>
             <td class="mono-cell">12</td><td>U-Yoke Model</td>
-            <td class="mono-cell">190 – 280 mm</td><td class="mono-cell">3" – 5"</td>`r`n            <td><span class="finish-tag tag-chrome">Chrome</span><span class="finish-tag tag-ced">CED</span><span class="finish-tag tag-zinc">Zinc</span></td>
+            <td class="mono-cell">190 – 280 mm</td><td class="mono-cell">3" – 5"</td>
+            <td><span class="finish-tag tag-chrome">Chrome</span><span class="finish-tag tag-ced">CED</span><span class="finish-tag tag-zinc">Zinc</span></td>
           </tr>
         </tbody>
       </table>
