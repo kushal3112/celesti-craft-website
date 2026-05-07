@@ -2345,21 +2345,22 @@ async function submitForm() {
   const whatsappHref = `https://wa.me/919810676819?text=${encodeURIComponent(plainText)}`;
 
   try {
+    const payload = new URLSearchParams({
+      company,
+      phone: phone || 'Not provided',
+      email: email || 'Not provided',
+      model: product || 'General enquiry',
+      message: msg || 'Please share product details and pricing.',
+      _replyto: email || '',
+      _subject: `New Quote Enquiry - ${company}`
+    });
     const resp = await fetch(formspreeEndpoint, {
       method: 'POST',
       headers: {
-        'Content-Type': 'application/json',
+        'Content-Type': 'application/x-www-form-urlencoded',
         'Accept': 'application/json'
       },
-      body: JSON.stringify({
-        company,
-        phone: phone || 'Not provided',
-        email: email || 'Not provided',
-        model: product || 'General enquiry',
-        message: msg || 'Please share product details and pricing.',
-        _replyto: email || '',
-        _subject: `New Quote Enquiry - ${company}`
-      })
+      body: payload.toString()
     });
     if (!resp.ok) throw new Error('Formspree request failed');
     if (statusEl) {
