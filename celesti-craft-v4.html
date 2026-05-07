@@ -2140,15 +2140,15 @@ footer {
             <input type="text" id="f-company" placeholder="Company name">
           </div>
           <div class="form-group">
-            <label>Phone / WhatsApp</label>
-            <input type="tel" id="f-phone" placeholder="+91 XXXXX XXXXX">
+            <label>Phone / WhatsApp *</label>
+            <input type="tel" id="f-phone" placeholder="+91 XXXXX XXXXX" required>
           </div>
         </div>
         <div class="form-group">
           <label>Email</label>
           <input type="email" id="f-email" placeholder="you@company.com">
         </div>
-        <p style="font-size:12px;color:var(--light-mid);margin:-8px 0 16px;">At least one contact method is required: phone or email.</p>
+        <p style="font-size:12px;color:var(--light-mid);margin:-8px 0 16px;">Phone is required for quick India B2B follow-up. Email is optional.</p>
         <div class="form-group">
           <label>Product / Model</label>
           <select id="f-product">
@@ -2276,7 +2276,7 @@ async function submitForm() {
     statusEl.textContent = '';
   }
   if (!company) { alert('Please enter company name.'); return; }
-  if (!phone && !email) { alert('Please provide at least a phone number or email.'); return; }
+  if (!phone) { alert('Please enter phone / WhatsApp number.'); return; }
 
   const formspreeEndpoint = 'https://formspree.io/f/xbdwopzy';
   const plainText =
@@ -2303,9 +2303,9 @@ async function submitForm() {
     if (!resp.ok) throw new Error('Formspree request failed');
     if (statusEl) {
       statusEl.className = 'form-status success';
-      statusEl.innerHTML = `Thanks! Your enquiry has been submitted. <a href="${whatsappHref}" target="_blank" rel="noopener noreferrer">Send this on WhatsApp too</a>`;
+      statusEl.innerHTML = `Thank you! Your enquiry has been submitted successfully. Our team will contact you shortly. <a href="${whatsappHref}" target="_blank" rel="noopener noreferrer">Send this on WhatsApp too</a>`;
     } else {
-      alert('Thanks! Your enquiry has been submitted successfully.');
+      alert('Thank you! Your enquiry has been submitted successfully. Our team will contact you shortly.');
     }
   } catch (e) {
     if (statusEl) {
