@@ -6,14 +6,55 @@
   <title>Product Catalogue | Celesti Craft</title>
   <meta name="description" content="Full product catalogue of forged speaker pole plates, T-yokes, and top plates by Celesti Craft.">
   <link rel="canonical" href="https://forgedspeakerkit.in/catalogue/">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Manrope:wght@600;700;800&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <style>
+    :root { --white:#fff; --off:#f0f2f7; --ink:#1a2440; --mid:#34466f; --graph:#0f1d4a; --border:#c8cedf; --fontd:'Manrope',sans-serif; --fontb:'Inter',sans-serif; }
+    * { box-sizing:border-box; margin:0; padding:0; }
+    body { font-family:var(--fontb); background:var(--off); color:var(--ink); }
+    nav { position:sticky; top:0; z-index:10; background:rgba(255,255,255,.96); border-bottom:1px solid var(--border); }
+    .navin { max-width:1180px; margin:0 auto; padding:14px 24px; display:flex; justify-content:space-between; align-items:center; }
+    .brand { display:flex; gap:10px; align-items:center; text-decoration:none; color:var(--graph); }
+    .brand img { width:46px; }
+    .brand strong { font-family:var(--fontd); font-size:20px; }
+    .menu a { margin-left:16px; color:var(--ink); text-decoration:none; font-weight:600; }
+    .menu a.cta { background:var(--graph); color:#fff; padding:10px 14px; border-radius:6px; }
+    .wrap { max-width:1180px; margin:0 auto; padding:44px 24px 64px; }
+    h1 { font-family:var(--fontd); font-size:48px; margin-bottom:14px; color:var(--graph); }
+    p { color:var(--mid); font-size:18px; line-height:1.7; max-width:760px; }
+    .actions { margin-top:24px; display:flex; gap:12px; flex-wrap:wrap; }
+    .btn { text-decoration:none; background:var(--graph); color:#fff; padding:12px 14px; border-radius:6px; font-weight:700; }
+    footer { background:linear-gradient(180deg,#09122f 0%,#060d23 100%); color:rgba(255,255,255,.85); padding:30px 24px; }
+    .foot { max-width:1180px; margin:0 auto; display:flex; justify-content:space-between; gap:14px; flex-wrap:wrap; }
+    .foot a { color:#b8c9ff; text-decoration:none; }
+  </style>
 </head>
-<body style="font-family:Arial,sans-serif;max-width:980px;margin:0 auto;padding:24px;background:#f3f5fb;color:#142044;">
-  <h1>Product Catalogue</h1>
-  <p>Browse the complete model range and detailed specifications.</p>
-  <p>
-    <a href="/products/">View All Product Pages</a> |
-    <a href="/#catalogue">Open Catalogue Section on Home</a> |
-    <a href="/contact/">Request Quote</a>
-  </p>
+<body>
+  <nav>
+    <div class="navin">
+      <a class="brand" href="/"><img src="/assets/celesti-logo.png" alt="Celesti Craft logo"><strong>Celesti Craft</strong></a>
+      <div class="menu">
+        <a href="/products/">Products</a>
+        <a href="/finishes/">Finishes</a>
+        <a href="/process/">Process</a>
+        <a class="cta" href="/contact/">Get Quote</a>
+      </div>
+    </div>
+  </nav>
+  <main class="wrap">
+    <h1>Product Catalogue</h1>
+    <p>Browse the complete model range and detailed specifications. This page acts as a central catalogue gateway for buyers and procurement teams.</p>
+    <div class="actions">
+      <a class="btn" href="/products/">View All Product Models</a>
+      <a class="btn" href="/#catalogue">Open Detailed Table on Home</a>
+      <a class="btn" href="/contact/">Request Pricing</a>
+    </div>
+  </main>
+  <footer>
+    <div class="foot">
+      <div>Celesti Craft · Ghaziabad · Industrial Speaker Hardware</div>
+      <div><a href="/">Home</a> · <a href="/products/">Products</a> · <a href="/contact/">Contact</a></div>
+    </div>
+  </footer>
 </body>
 </html>
