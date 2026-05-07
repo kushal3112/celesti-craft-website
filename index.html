@@ -12,7 +12,7 @@
 <link rel="canonical" href="https://kushal3112.github.io/celesti-craft-website/">
 <link rel="preload" as="image" href="assets/optimized/hero-1100.webp" imagesrcset="assets/optimized/hero-640.webp 640w, assets/optimized/hero-1100.webp 1100w" imagesizes="(max-width: 900px) 100vw, 50vw">
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;600;700;800&family=Barlow:wght@300;400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Manrope:wght@600;700;800&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -75,8 +75,8 @@
   --graphite:     #0f1d4a;        /* deep navy — primary dark */
   --graphite-mid: #1a2d6b;        /* mid navy — hover/darker panels */
   --ink:          #1a2440;        /* navy ink for body text */
-  --mid:          #4a5580;        /* muted navy-grey for secondary text */
-  --light-mid:    #7a87b0;        /* light navy-grey */
+  --mid:          #34466f;        /* muted navy-grey for secondary text */
+  --light-mid:    #5e719d;        /* light navy-grey */
   --border:       #c8cedf;        /* blue-tinted border */
   --copper:       #1e3a8a;        /* navy blue — replaces copper as accent */
   --copper-light: #2d52b8;        /* brighter navy for hover */
@@ -88,15 +88,15 @@
   --shadow-md:    0 4px 20px rgba(15,29,74,0.12);
   --shadow-lg:    0 12px 48px rgba(15,29,74,0.18);
   --radius:       4px;
-  --font-display: 'Barlow Condensed', sans-serif;
-  --font-body:    'Barlow', sans-serif;
+  --font-display: 'Manrope', sans-serif;
+  --font-body:    'Inter', sans-serif;
   --font-mono:    'IBM Plex Mono', monospace;
   --nav-h: 72px;
 }
 
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
-html { scroll-behavior: smooth; font-size: 17px; }
+html { scroll-behavior: smooth; font-size: 18px; }
 
 body {
   background: var(--off-white);
@@ -180,7 +180,7 @@ nav.scrolled { box-shadow: var(--shadow-md); }
   font-weight: 600;
   letter-spacing: 0.06em;
   text-transform: uppercase;
-  color: var(--mid);
+  color: var(--ink);
   text-decoration: none;
   transition: color 0.2s;
   position: relative;
@@ -300,10 +300,10 @@ nav.scrolled { box-shadow: var(--shadow-md); }
 }
 .hero-eyebrow span {
   font-family: var(--font-mono);
-  font-size: 11px;
+  font-size: 12px;
   letter-spacing: 0.2em;
   text-transform: uppercase;
-  color: #4a7fff;
+  color: #a9c4ff;
 }
 
 .hero-title {
@@ -321,8 +321,8 @@ nav.scrolled { box-shadow: var(--shadow-md); }
 }
 
 .hero-desc {
-  font-size: 16px;
-  color: rgba(255,255,255,0.65);
+  font-size: 17px;
+  color: rgba(255,255,255,0.86);
   max-width: 420px;
   line-height: 1.7;
   margin-bottom: 40px;
@@ -335,7 +335,7 @@ nav.scrolled { box-shadow: var(--shadow-md); }
 .hero-tag {
   background: rgba(255,255,255,0.07);
   border: 1px solid rgba(255,255,255,0.14);
-  color: rgba(255,255,255,0.8);
+  color: rgba(255,255,255,0.92);
   padding: 5px 14px;
   border-radius: 2px;
   font-family: var(--font-mono);
@@ -420,8 +420,8 @@ nav.scrolled { box-shadow: var(--shadow-md); }
   color: #7aaeff;
 }
 .hero-stat-label {
-  font-size: 12px;
-  color: rgba(255,255,255,0.45);
+  font-size: 13px;
+  color: rgba(255,255,255,0.74);
   margin-top: 4px;
   letter-spacing: 0.05em;
 }
@@ -590,7 +590,7 @@ section { padding: 96px 0; }
 
 .about-text {}
 .about-text .section-sub {
-  font-size: 16px;
+  font-size: 17px;
 }
 .about-features {
   display: grid; grid-template-columns: 1fr 1fr;
@@ -692,7 +692,7 @@ section { padding: 96px 0; }
 }
 .product-model {
   font-family: var(--font-mono);
-  font-size: 11px;
+  font-size: 12px;
   letter-spacing: 0.12em;
   text-transform: uppercase;
   color: var(--copper);
@@ -700,7 +700,7 @@ section { padding: 96px 0; }
 }
 .product-name {
   font-family: var(--font-display);
-  font-size: 20px;
+  font-size: 22px;
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 0.02em;
@@ -716,14 +716,14 @@ section { padding: 96px 0; }
 }
 .spec-key {
   font-family: var(--font-mono);
-  font-size: 11px;
+  font-size: 12px;
   letter-spacing: 0.08em;
   text-transform: uppercase;
   color: var(--light-mid);
   width: 72px; flex-shrink: 0;
 }
 .spec-val {
-  font-size: 14px;
+  font-size: 15px;
   color: var(--ink);
   font-weight: 500;
 }
@@ -1134,7 +1134,7 @@ section { padding: 96px 0; }
   margin-bottom: 4px;
 }
 .c-val {
-  font-size: 16px;
+  font-size: 17px;
   color: var(--ink);
   line-height: 1.5;
   font-weight: 500;
@@ -1284,10 +1284,10 @@ footer {
   line-height: 1;
 }
 .footer-brand p {
-  font-size: 14px;
+  font-size: 15px;
   line-height: 1.7;
   max-width: 280px;
-  color: rgba(255,255,255,0.76);
+  color: rgba(255,255,255,0.86);
 }
 .footer-badges {
   margin-top: 20px;
@@ -1315,7 +1315,7 @@ footer {
 }
 .footer-col a {
   display: block;
-  font-size: 14px;
+  font-size: 15px;
   color: rgba(255,255,255,0.84);
   text-decoration: none;
   padding: 4px 0;
