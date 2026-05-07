@@ -1265,6 +1265,53 @@ section { padding: 96px 0; }
 }
 .form-status a:hover { text-decoration: underline; }
 
+/* ── TRUST STRIP ── */
+.trust-strip {
+  margin-top: 16px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+.trust-pill {
+  background: var(--white);
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  padding: 6px 12px;
+  font-family: var(--font-mono);
+  font-size: 10px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--graphite);
+}
+
+/* ── FAQ ── */
+#faq {
+  background: var(--white);
+}
+.faq-grid {
+  margin-top: 36px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+.faq-item {
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 18px 18px 16px;
+  background: var(--off-white);
+}
+.faq-item h3 {
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--graphite);
+  margin-bottom: 8px;
+}
+.faq-item p {
+  font-size: 14px;
+  color: var(--mid);
+  line-height: 1.65;
+}
+
 /* ═══════════════════ FOOTER ═══════════════════ */
 footer {
   background: linear-gradient(180deg, #09122f 0%, #060d23 100%);
@@ -1382,6 +1429,11 @@ footer {
   color: rgba(255,255,255,0.78);
 }
 
+/* ── MOBILE STICKY CTA ── */
+.mobile-sticky-cta {
+  display: none;
+}
+
 /* ═══════════════════ FLOATING ELEMENTS ═══════════════════ */
 .float-wa {
   position: fixed; bottom: 32px; right: 32px; z-index: 998;
@@ -1460,6 +1512,43 @@ footer {
   .footer-grid { grid-template-columns: 1fr; gap: 32px; }
   .footer-bottom { flex-direction: column; gap: 12px; text-align: center; }
   section { padding: 64px 0; }
+  .faq-grid { grid-template-columns: 1fr; }
+  .mobile-sticky-cta {
+    position: fixed;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 1001;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 8px;
+    padding: 8px 10px calc(8px + env(safe-area-inset-bottom));
+    background: rgba(255,255,255,0.96);
+    border-top: 1px solid var(--border);
+    backdrop-filter: blur(8px);
+  }
+  .mobile-sticky-cta a {
+    text-decoration: none;
+    text-align: center;
+    font-family: var(--font-display);
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    padding: 10px 8px;
+    border-radius: var(--radius);
+  }
+  .mobile-sticky-cta .cta-call {
+    border: 1px solid var(--graphite);
+    color: var(--graphite);
+    background: var(--white);
+  }
+  .mobile-sticky-cta .cta-wa {
+    border: 1px solid #20b45c;
+    color: #ffffff;
+    background: #25D366;
+  }
+  .float-wa, .back-to-top { bottom: 84px; }
 }
 
 /* ═══════════════════ ANIMATIONS ═══════════════════ */
@@ -1522,7 +1611,7 @@ footer {
   <div class="hero-left">
     <div class="hero-eyebrow fade-up fade-up-1">
       <div class="hero-eyebrow-line"></div>
-      <span>Est. 2023 · Ghaziabad, UP · India</span>
+      <span>Est. 2023 · Delhi NCR · India</span>
     </div>
     <h1 class="hero-title fade-up fade-up-2">
       Forged<br><em>Speaker</em><br>Pole Plates
@@ -2152,6 +2241,12 @@ footer {
         <p style="font-size:15px;color:var(--mid);margin-top:8px;max-width:420px;line-height:1.7;">
           Share your model, size and quantity. We'll respond within the same business day. Custom drawings welcome.
         </p>
+        <div class="trust-strip" aria-label="Business trust points">
+          <span class="trust-pill">Delhi NCR Supplier</span>
+          <span class="trust-pill">MSME Registered</span>
+          <span class="trust-pill">GST Invoice</span>
+          <span class="trust-pill">Same-Day Response</span>
+        </div>
         <div class="contact-info-items">
           <div class="contact-item">
             <div class="c-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2 4.1 2 2 0 0 1 4 2h3a2 2 0 0 1 2 1.7c.1.9.4 1.8.8 2.6a2 2 0 0 1-.4 2.1l-1.3 1.3a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.8.4 1.7.7 2.6.8A2 2 0 0 1 22 16.9z"/></svg></div>
@@ -2185,7 +2280,7 @@ footer {
             <div class="c-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 21s7-6.2 7-11a7 7 0 1 0-14 0c0 4.8 7 11 7 11z"/><circle cx="12" cy="10" r="2.5"/></svg></div>
             <div>
               <div class="c-label">Factory Address</div>
-              <div class="c-val">Plot No. 3 &amp; 4, Kh. No. 54, Morta, Rasulpur<br>Ghaziabad, UP – 201003</div>
+              <div class="c-val">Plot No. 3 &amp; 4, Kh. No. 54, Morta, Rasulpur<br>Delhi NCR (Ghaziabad, UP) – 201003</div>
             </div>
           </div>
         </div>
@@ -2245,6 +2340,36 @@ footer {
   </div>
 </section>
 
+<!-- ─── FAQ ─── -->
+<section id="faq">
+  <div class="container">
+    <div class="section-label">
+      <div class="section-label-line"></div>
+      <span>Buyer FAQ</span>
+    </div>
+    <h2 class="section-title">Common Enquiry Questions</h2>
+    <p class="section-sub">Quick answers for Delhi NCR and PAN India B2B buyers.</p>
+    <div class="faq-grid">
+      <article class="faq-item">
+        <h3>What is the minimum order quantity (MOQ)?</h3>
+        <p>MOQ depends on model and finish. Share your required model and quantity, and we will confirm the best commercial batch size.</p>
+      </article>
+      <article class="faq-item">
+        <h3>Do you supply in Delhi NCR and nearby markets?</h3>
+        <p>Yes. We are based in Morta, Delhi NCR (Ghaziabad) and supply regularly across Delhi NCR plus PAN India dispatch as per requirement.</p>
+      </article>
+      <article class="faq-item">
+        <h3>What finishes are available?</h3>
+        <p>Chrome, CED and Zinc finish options are available across standard and custom forged pole plate models.</p>
+      </article>
+      <article class="faq-item">
+        <h3>How fast do you respond to quote requests?</h3>
+        <p>Most quote enquiries are acknowledged the same business day on phone/WhatsApp, followed by model-wise pricing confirmation.</p>
+      </article>
+    </div>
+  </div>
+</section>
+
 <!-- ─── FOOTER ─── -->
 <footer>
   <div class="container">
@@ -2257,7 +2382,7 @@ footer {
             <div class="sub">Forged Speaker Hardware</div>
           </div>
         </div>
-        <p>Precision-forged pole plates, T-yokes and top plates from Ghaziabad, UP. Custom sizes. Chrome, CED & Zinc finish. PAN India supply with GST billing.</p>
+        <p>Precision-forged pole plates, T-yokes and top plates from Delhi NCR (Morta, Ghaziabad, UP). Custom sizes. Chrome, CED & Zinc finish. PAN India supply with GST billing.</p>
         <div class="footer-badges">
           <span class="footer-badge">MSME Registered</span>
           <span class="footer-badge">GST Invoice</span>
@@ -2305,6 +2430,11 @@ footer {
     </div>
   </div>
 </footer>
+
+<div class="mobile-sticky-cta" aria-label="Quick contact actions">
+  <a class="cta-call" href="tel:+919810676819">Call Now</a>
+  <a class="cta-wa" href="https://wa.me/919810676819?text=Hello%20Celesti%20Craft%2C%20I%20need%20a%20quote." target="_blank" rel="noopener">WhatsApp</a>
+</div>
 
 <!-- ─── FLOATING ELEMENTS ─── -->
 <a class="float-wa" href="https://wa.me/919810676819?text=Hello%20Celesti%20Craft%2C%20I%20am%20interested%20in%20your%20speaker%20hardware." target="_blank" title="Chat on WhatsApp">
