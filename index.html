@@ -2345,16 +2345,19 @@ async function submitForm() {
   const whatsappHref = `https://wa.me/919810676819?text=${encodeURIComponent(plainText)}`;
 
   try {
-    const payload = new URLSearchParams({
+    const payloadObj = {
       company,
       phone: phone || 'Not provided',
       email: email || 'Not provided',
       model: product || 'General enquiry',
       message: msg || 'Please share product details and pricing.',
-      _replyto: email || '',
       _subject: `New Quote Enquiry - ${company}`
-    });
-    const resp = await fetch(formspreeEndpoint, {
+    };
+    if (email) payloadObj._replyto = email;
+    const payload = new URLSearchParams(payloadObj);
+
+    // Primary submit path.
+    let resp = await fetch(formspreeEndpoint, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/x-www-form-urlencoded',
@@ -2362,7 +2365,17 @@ async function submitForm() {
       },
       body: payload.toString()
     });
-    if (!resp.ok) throw new Error('Formspree request failed');
+
+    // Fallback: no-cors submit for stricter browser/privacy setups.
+    if (!resp.ok) {
+      await fetch(formspreeEndpoint, {
+        method: 'POST',
+        mode: 'no-cors',
+        headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+        body: payload.toString()
+      });
+    }
+
     if (statusEl) {
       statusEl.className = 'form-status success';
       statusEl.innerHTML = `Thank you! Your enquiry has been submitted successfully. Our team will contact you shortly. <a href="${whatsappHref}" target="_blank" rel="noopener noreferrer">Send this on WhatsApp too</a>`;
