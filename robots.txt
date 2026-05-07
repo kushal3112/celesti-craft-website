@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://kushal3112.github.io/celesti-craft-website/sitemap.xml
