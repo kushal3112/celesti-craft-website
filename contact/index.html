@@ -22,7 +22,7 @@
   <style>
     :root { --white:#fff; --off:#f0f2f7; --ink:#1a2440; --mid:#34466f; --graph:#0f1d4a; --border:#c8cedf; --fontd:'Manrope',sans-serif; --fontb:'Inter',sans-serif; }
     * { box-sizing:border-box; margin:0; padding:0; }
-    body { font-family:var(--fontb); background:var(--off); color:var(--ink); }
+    body { font-family:var(--fontb); background:var(--off); color:var(--ink); min-height:100vh; display:flex; flex-direction:column; }
     nav { position:sticky; top:0; z-index:10; background:rgba(255,255,255,.96); border-bottom:1px solid var(--border); }
     .navin { max-width:1180px; margin:0 auto; padding:14px 24px; display:flex; justify-content:space-between; align-items:center; }
     .brand { display:flex; gap:10px; align-items:center; text-decoration:none; color:var(--graph); }
@@ -30,7 +30,7 @@
     .brand strong { font-family:var(--fontd); font-size:20px; }
     .menu a { margin-left:16px; color:var(--ink); text-decoration:none; font-weight:600; }
     .menu a.cta { background:var(--graph); color:#fff; padding:10px 14px; border-radius:6px; }
-    .wrap { max-width:1180px; margin:0 auto; padding:44px 24px 64px; }
+    .wrap { max-width:1180px; margin:0 auto; padding:44px 24px 64px; width:100%; flex:1; }
     h1 { font-family:var(--fontd); font-size:48px; margin-bottom:14px; color:var(--graph); }
     .intro { color:var(--mid); font-size:18px; margin-bottom:20px; }
     .card { background:#fff; border:1px solid var(--border); border-radius:8px; padding:18px; max-width:760px; }
