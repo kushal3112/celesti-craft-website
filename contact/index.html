@@ -28,12 +28,15 @@
     :root { --white:#fff; --off:#f0f2f7; --ink:#1a2440; --mid:#34466f; --graph:#0f1d4a; --border:#c8cedf; --fontd:'Manrope',sans-serif; --fontb:'Inter',sans-serif; }
     * { box-sizing:border-box; margin:0; padding:0; }
     body { font-family:var(--fontb); background:var(--off); color:var(--ink); min-height:100vh; display:flex; flex-direction:column; }
-    nav { position:sticky; top:0; z-index:10; background:rgba(255,255,255,.96); border-bottom:1px solid var(--border); }
-    .navin { max-width:1180px; margin:0 auto; padding:14px 24px; display:flex; justify-content:space-between; align-items:center; }
+    nav.sub-nav { position:sticky; top:0; z-index:100; background:rgba(255,255,255,.96); backdrop-filter:blur(8px); border-bottom:1px solid var(--border); }
+    .navin { max-width:1180px; margin:0 auto; padding:14px 24px; display:flex; align-items:center; gap:16px; position:relative; }
+    .nav-toggle { display:none; flex-direction:column; justify-content:center; gap:5px; width:44px; height:44px; padding:10px; margin-left:auto; border:none; background:transparent; cursor:pointer; flex-shrink:0; }
+    .nav-toggle span { display:block; height:2px; background:var(--graph); border-radius:1px; }
     .brand { display:flex; gap:10px; align-items:center; text-decoration:none; color:var(--graph); }
     .brand img { width:46px; }
     .brand strong { font-family:var(--fontd); font-size:20px; }
-    .menu a { margin-left:16px; color:var(--ink); text-decoration:none; font-weight:600; }
+    .menu { display:flex; flex-wrap:wrap; align-items:center; justify-content:flex-end; flex:1; gap:4px; }
+    .menu a { margin-left:12px; color:var(--ink); text-decoration:none; font-weight:600; font-size:14px; }
     .menu a.cta { background:var(--graph); color:#fff; padding:10px 14px; border-radius:6px; }
     .wrap { max-width:1180px; margin:0 auto; padding:44px 24px 64px; width:100%; flex:1; }
     h1 { font-family:var(--fontd); font-size:48px; margin-bottom:14px; color:var(--graph); }
@@ -42,14 +45,37 @@
     .item { margin-bottom:12px; color:var(--mid); font-size:17px; }
     .item a { color:var(--graph); text-decoration:none; font-weight:700; }
     footer { background:linear-gradient(180deg,#09122f 0%,#060d23 100%); color:rgba(255,255,255,.85); padding:30px 24px; }
-    .foot { max-width:1180px; margin:0 auto; display:flex; justify-content:space-between; gap:14px; flex-wrap:wrap; }
-    .foot a { color:#b8c9ff; text-decoration:none; }
+    .foot { max-width:1180px; margin:0 auto; display:flex; justify-content:space-between; align-items:center; gap:20px; flex-wrap:wrap; }
+    .foot-tagline { font-size:14px; line-height:1.55; max-width:520px; }
+    .foot-links { display:flex; flex-wrap:wrap; gap:10px 18px; align-items:center; justify-content:flex-end; }
+    .foot a { color:#b8c9ff; text-decoration:none; font-size:15px; font-weight:600; }
+    @media (max-width:960px){
+      .nav-toggle{display:flex;}
+      .menu{display:none;position:absolute;left:0;right:0;top:100%;flex-direction:column;align-items:stretch;padding:8px 0 16px;background:rgba(255,255,255,.98);border-bottom:1px solid var(--border);box-shadow:0 12px 32px rgba(15,29,74,.1);}
+      nav.sub-nav.menu-open .menu{display:flex;}
+      .menu a{margin-left:0;padding:14px 20px;border-bottom:1px solid var(--border);font-size:15px;}
+      .menu a.cta{margin:12px 16px 4px;border-bottom:none;text-align:center;border-radius:6px;}
+      .brand strong{font-size:17px;}
+      .brand img{width:40px;}
+      .navin{padding:12px 16px;}
+    }
+    @media (max-width:640px){
+      .wrap{padding:28px 16px 56px;}
+      h1{font-size:28px;line-height:1.15;}
+      .intro{font-size:16px;}
+      .card{padding:16px;max-width:none;}
+      .item{font-size:15px;}
+      footer{padding:24px 16px;}
+      .foot{flex-direction:column;text-align:center;}
+      .foot-links{justify-content:center;}
+    }
   </style>
 </head>
 <body>
-  <nav>
+  <nav class="sub-nav" id="subNav">
     <div class="navin">
       <a class="brand" href="/"><img src="/assets/celesti-logo.png" alt="Celesti Craft logo"><strong>Celesti Craft</strong></a>
+      <button type="button" class="nav-toggle" id="navToggle" aria-label="Open menu" aria-expanded="false"><span></span><span></span><span></span></button>
       <div class="menu">
         <a href="/">Home</a>
         <a href="/#about">About</a>
@@ -75,11 +101,23 @@
   </main>
   <footer>
     <div class="foot">
-      <div>Celesti Craft · Delhi NCR (Morta, Ghaziabad) · PAN India Supply</div>
-      <div><a href="/">Home</a> · <a href="/products/">Products</a> · <a href="/contact/">Contact</a></div>
+      <div class="foot-tagline">Celesti Craft · Delhi NCR (Morta, Ghaziabad) · PAN India supply</div>
+      <div class="foot-links"><a href="/">Home</a><a href="/products/">Products</a><a href="/contact/">Contact</a></div>
     </div>
   </footer>
 <script>
+(function(){
+  var nav=document.getElementById('subNav'), btn=document.getElementById('navToggle');
+  if(!nav||!btn)return;
+  btn.addEventListener('click',function(){
+    var o=nav.classList.toggle('menu-open');
+    btn.setAttribute('aria-expanded',o?'true':'false');
+    btn.setAttribute('aria-label',o?'Close menu':'Open menu');
+  });
+  nav.querySelectorAll('.menu a').forEach(function(a){
+    a.addEventListener('click',function(){nav.classList.remove('menu-open');btn.setAttribute('aria-expanded','false');btn.setAttribute('aria-label','Open menu');});
+  });
+})();
 // Basic image protection: block context menu and drag on images.
 document.addEventListener('contextmenu', function (e) {
   if (e.target.closest('img')) e.preventDefault();
