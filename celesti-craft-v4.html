@@ -857,7 +857,7 @@ section { padding: 96px 0; }
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 0;
-  margin-top: 64px;
+  margin-top: 52px;
   position: relative;
 }
 .process-steps::before {
@@ -916,6 +916,52 @@ section { padding: 96px 0; }
   font-size: 14px;
   color: var(--mid);
   line-height: 1.65;
+}
+.process-section-head {
+  margin-bottom: 0;
+}
+.process-section-head .section-title {
+  margin-bottom: 12px;
+}
+.process-intro-lead {
+  max-width: 42rem;
+  margin-bottom: 0;
+}
+.process-intro-highlights {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 12px;
+  margin: 18px 0 0;
+  padding: 0;
+  list-style: none;
+  max-width: 1180px;
+}
+@media (min-width: 768px) {
+  .process-intro-highlights {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px 20px;
+    align-items: stretch;
+  }
+}
+.process-intro-highlights li {
+  font-size: 15px;
+  color: var(--mid);
+  line-height: 1.55;
+  padding: 14px 16px;
+  background: var(--off-white);
+  border-radius: var(--radius);
+  border: 1px solid var(--border);
+  text-align: center;
+}
+.process-intro-highlights strong {
+  display: block;
+  font-family: var(--font-display);
+  font-size: 13px;
+  font-weight: 800;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--graphite);
+  margin-bottom: 6px;
 }
 
 /* ═══════════════════ MODELS CATALOGUE ═══════════════════ */
@@ -2033,18 +2079,19 @@ footer {
 <!-- ─── PROCESS ─── -->
 <section id="process">
   <div class="container">
-    <div style="display:flex;justify-content:space-between;align-items:flex-end;flex-wrap:wrap;gap:24px;margin-bottom:8px;">
-      <div>
-        <div class="section-label">
-          <div class="section-label-line"></div>
-          <span>How It's Made</span>
-        </div>
-        <h2 class="section-title">Manufacturing<br>Process</h2>
+    <header class="process-section-head">
+      <div class="section-label">
+        <div class="section-label-line"></div>
+        <span>How It's Made</span>
       </div>
-      <p style="max-width:360px;font-size:14px;color:var(--mid);line-height:1.7;padding-bottom:8px;">
-        Every Celesti Craft part follows a disciplined three-stage process — forging builds strength, machining builds precision, and finishing builds durability.
-      </p>
-    </div>
+      <h2 class="section-title">Manufacturing<br>Process</h2>
+      <p class="section-sub process-intro-lead">Every Celesti Craft part follows a disciplined three-stage process:</p>
+      <ul class="process-intro-highlights" aria-label="Three manufacturing stages">
+        <li><strong>Forging</strong> builds strength</li>
+        <li><strong>Machining</strong> builds precision</li>
+        <li><strong>Finishing</strong> builds durability</li>
+      </ul>
+    </header>
     <div class="process-steps">
       <div class="process-step">
         <div class="step-num-wrap">
