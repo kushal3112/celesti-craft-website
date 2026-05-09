@@ -5,7 +5,7 @@ Celesti Craft — SEO & discovery setup (forgedspeakerkit.in)
    - Open https://search.google.com/search-console
    - Add property: https://forgedspeakerkit.in/
    - Verify using the HTML meta tag method.
-   - In index.html (home), place the meta tag near the other verification comments (Search Console / Bing).
+   - Google Search Console HTML meta tag is already on index.html (home); keep it after verification.
    - After verification: Sitemaps → submit https://forgedspeakerkit.in/sitemap.xml
    - Monitor Coverage / Page indexing for errors; request indexing for important URLs after large changes.
 
