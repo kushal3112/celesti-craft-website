@@ -1,0 +1,24 @@
+Hosting: consolidate URLs on forgedspeakerkit.in
+==================================================
+
+Goal
+----
+Avoid duplicate content between GitHub Pages default URL and your custom domain.
+
+GitHub Pages (recommended behaviour)
+-----------------------------------
+When a custom domain is configured (CNAME: forgedspeakerkit.in), GitHub Pages normally redirects
+https://<user>.github.io/<repo>/ to your custom domain.
+
+Confirm in the repo: Settings → Pages → Custom domain shows forgedspeakerkit.in and "Enforce HTTPS".
+
+If visitors still reach github.io URLs from old links, update external listings to forgedspeakerkit.in.
+
+Other hosts (Netlify / Cloudflare / Apache)
+-------------------------------------------
+If you migrate off GitHub Pages, configure 301 redirects:
+
+  From: https://kushal3112.github.io/celesti-craft-website/*
+  To:   https://forgedspeakerkit.in/*
+
+Implementation depends on your DNS/host — use their redirect rules UI or server config.
