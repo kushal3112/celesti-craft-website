@@ -6,7 +6,10 @@ Celesti Craft — SEO & discovery setup (forgedspeakerkit.in)
    - Add property: https://forgedspeakerkit.in/
    - Verify using the HTML meta tag method.
    - Google Search Console HTML meta tag is already on index.html (home); keep it after verification.
-   - After verification: Sitemaps → submit https://forgedspeakerkit.in/sitemap.xml
+   - After verification: Sitemaps → submit exactly this URL (no trailing slash after .xml):
+     https://forgedspeakerkit.in/sitemap.xml
+     If you use https://forgedspeakerkit.in/sitemap.xml/ (slash at end), GitHub Pages returns HTML 404 and Search Console shows “could not be read”.
+   - Open that URL in a browser — you should see raw XML starting with <?xml version=
    - Monitor Coverage / Page indexing for errors; request indexing for important URLs after large changes.
 
 2) Bing Webmaster Tools
