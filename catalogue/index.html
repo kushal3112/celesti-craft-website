@@ -31,7 +31,10 @@
     h1 { font-family:var(--fontd); font-size:48px; margin-bottom:14px; color:var(--graph); }
     p { color:var(--mid); font-size:18px; line-height:1.7; max-width:760px; }
     .actions { margin-top:24px; display:flex; gap:12px; flex-wrap:wrap; }
-    .btn { text-decoration:none; background:var(--graph); color:#fff; padding:12px 14px; border-radius:6px; font-weight:700; }
+    .btn { text-decoration:none; background:var(--graph); color:#fff; padding:12px 14px; border-radius:6px; font-weight:700; display:inline-block; text-align:center; }
+    .pdf-block { margin-top:36px; padding:22px; background:#fff; border:1px solid var(--border); border-radius:8px; max-width:640px; }
+    .pdf-block h2 { font-family:var(--fontd); font-size:22px; color:var(--graph); margin-bottom:10px; }
+    .pdf-block p { font-size:15px; max-width:none; margin-bottom:16px; }
     footer { background:linear-gradient(180deg,#09122f 0%,#060d23 100%); color:rgba(255,255,255,.85); padding:30px 24px; }
     .foot { max-width:1180px; margin:0 auto; display:flex; justify-content:space-between; align-items:center; gap:20px; flex-wrap:wrap; }
     .foot-tagline { font-size:14px; line-height:1.55; max-width:520px; }
@@ -84,6 +87,11 @@
       <a class="btn" href="/products/">View All Product Models</a>
       <a class="btn" href="/#catalogue">Open Detailed Table on Home</a>
       <a class="btn" href="/contact/">Request Pricing</a>
+    </div>
+    <div class="pdf-block">
+      <h2>PDF catalogue</h2>
+      <p>Download our product catalogue as a PDF for offline sharing with your purchase team. For latest pricing and lead times, use Request Pricing or WhatsApp.</p>
+      <a class="btn" href="/assets/catalog/celesti-craft-catalog.pdf" download="Celesti-Craft-catalog.pdf">Download PDF catalogue</a>
     </div>
   </main>
   <footer>
