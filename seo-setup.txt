@@ -5,7 +5,7 @@ Celesti Craft — SEO & discovery setup (forgedspeakerkit.in)
    - Open https://search.google.com/search-console
    - Add property: https://forgedspeakerkit.in/
    - Verify using the HTML meta tag method.
-   - In index.html (home), place the meta tag directly under the comments that mention Search Console (before <script>window.CELESTI_GA4_ID).
+   - In index.html (home), place the meta tag near the other verification comments (Search Console / Bing).
    - After verification: Sitemaps → submit https://forgedspeakerkit.in/sitemap.xml
    - Monitor Coverage / Page indexing for errors; request indexing for important URLs after large changes.
 
@@ -14,9 +14,9 @@ Celesti Craft — SEO & discovery setup (forgedspeakerkit.in)
    - Submit the same sitemap URL.
 
 3) Google Analytics 4
-   - Create a GA4 property and copy the Measurement ID (format G-XXXXXXXXXX).
-   - In index.html set: window.CELESTI_GA4_ID = 'G-XXXXXXXXXX';
-   - Repeat the same one-line CELESTI_GA4_ID on other pages that include /assets/js/analytics.js (contact, catalogue, products hub, etc.), or centralise later via your CMS/build step.
+   - The official Google tag (gtag.js) for Measurement ID G-KZXLMT4GW3 is in <head> on site templates (see index.html, contact, products, etc.).
+   - To change the property ID later: replace G-KZXLMT4GW3 in each <!-- Google tag (gtag.js) --> block (same ID everywhere — only one tag per page).
+   - Optional: assets/js/analytics.js sends extra events (WhatsApp, phone, PDF, forms); keep loading it after the Google tag (defer at end of body is fine).
 
 4) Google Business Profile (Maps)
    - Ensure business name, address, phones match NAP.txt exactly where possible.
