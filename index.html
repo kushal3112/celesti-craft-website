@@ -1175,6 +1175,47 @@ section { padding: 96px 0; }
 .c-val a { color: var(--ink); text-decoration: none; }
 .c-val a:hover { color: var(--copper); }
 
+.contact-map-wrap {
+  margin-top: 48px;
+  padding-top: 40px;
+  border-top: 1px solid var(--border);
+}
+.contact-map-wrap .contact-map-title {
+  font-family: var(--font-display);
+  font-size: 22px;
+  font-weight: 800;
+  color: var(--graphite);
+  margin-bottom: 14px;
+  text-transform: none;
+  letter-spacing: 0;
+}
+.contact-map-frame {
+  position: relative;
+  width: 100%;
+  border-radius: var(--radius);
+  overflow: hidden;
+  border: 1px solid var(--border);
+  background: #e8eaf0;
+  min-height: 320px;
+  aspect-ratio: 16 / 10;
+}
+.contact-map-frame iframe {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
+a.contact-map-link {
+  display: inline-block;
+  margin-top: 14px;
+  font-weight: 700;
+  font-size: 15px;
+  color: var(--graphite);
+  text-decoration: none;
+}
+a.contact-map-link:hover { color: var(--copper); }
+
 .contact-form {
   background: var(--white);
   padding: 40px;
@@ -1513,6 +1554,7 @@ footer {
   .footer-bottom { flex-direction: column; gap: 12px; text-align: center; }
   section { padding: 64px 0; }
   .faq-grid { grid-template-columns: 1fr; }
+  .contact-map-frame { min-height: 260px; }
   .mobile-sticky-cta {
     position: fixed;
     left: 0;
@@ -2280,7 +2322,7 @@ footer {
             <div class="c-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 21s7-6.2 7-11a7 7 0 1 0-14 0c0 4.8 7 11 7 11z"/><circle cx="12" cy="10" r="2.5"/></svg></div>
             <div>
               <div class="c-label">Factory Address</div>
-              <div class="c-val">Plot No. 3 &amp; 4, Kh. No. 54, Morta, Rasulpur<br>Delhi NCR (Ghaziabad, UP) – 201003</div>
+              <div class="c-val">Plot No. 3 &amp; 4, Kh. No. 54, Morta, Rasulpur<br>Delhi NCR (Ghaziabad, UP) – 201003<br><a href="https://www.google.com/maps/place/Celesti+Craft/@28.7168256,77.4662501,17z/data=!3m1!4b1!4m6!3m5!1s0x390cf162e2423535:0xd2398aa15445019b!8m2!3d28.7168256!4d77.4662501" target="_blank" rel="noopener noreferrer">Google Maps — directions</a></div>
             </div>
           </div>
         </div>
@@ -2336,6 +2378,20 @@ footer {
         <div id="formStatus" class="form-status" role="status" aria-live="polite"></div>
         </form>
       </div>
+    </div>
+    <div class="contact-map-wrap">
+      <div class="section-label">
+        <div class="section-label-line"></div>
+        <span>Visit Us</span>
+      </div>
+      <h3 class="contact-map-title">Factory location</h3>
+      <p style="font-size:14px;color:var(--mid);margin-bottom:16px;max-width:640px;line-height:1.6;">
+        Same site as above — Morta, Ghaziabad. If the map preview does not appear, use the link below (some networks block embedded maps).
+      </p>
+      <div class="contact-map-frame">
+        <iframe title="Celesti Craft factory on Google Maps" width="600" height="380" style="position:absolute;inset:0;width:100%;height:100%;border:0;" loading="lazy" allowfullscreen referrerpolicy="no-referrer-when-downgrade" src="https://www.google.com/maps?q=28.7168256,77.4662501&amp;z=17&amp;hl=en&amp;output=embed"></iframe>
+      </div>
+      <a class="contact-map-link" href="https://www.google.com/maps/place/Celesti+Craft/@28.7168256,77.4662501,17z/data=!3m1!4b1!4m6!3m5!1s0x390cf162e2423535:0xd2398aa15445019b!8m2!3d28.7168256!4d77.4662501" target="_blank" rel="noopener noreferrer">Open in Google Maps →</a>
     </div>
   </div>
 </section>
