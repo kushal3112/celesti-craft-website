@@ -1,4 +1,14 @@
+# robots.txt for forgedspeakerkit.in
+# Last updated: 2026-05-11
 User-agent: *
 Allow: /
+
+# Explicitly allow assets and static folders (some bots cache stale rules)
+Allow: /assets/
+Allow: /products/
+Allow: /catalogue/
+Allow: /finishes/
+Allow: /process/
+Allow: /contact/
 
 Sitemap: https://forgedspeakerkit.in/sitemap.xml
